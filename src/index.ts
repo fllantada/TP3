@@ -43,6 +43,7 @@ app.get("/productos", (req: Request, res: Response) => {
 });
 
 app.get("/", (req: Request, res: Response) => {
+  console.log("SOlicitud a /");
   res.send("servidor operando en puerto 8080");
 });
 
