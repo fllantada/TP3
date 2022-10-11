@@ -42,6 +42,10 @@ app.get("/productos", (req: Request, res: Response) => {
   res.json(productos);
 });
 
+app.get("/", (req: Request, res: Response) => {
+  res.send("servidor operando en puerto 8080");
+});
+
 app.get("/productoRandom", (req: Request, res: Response) => {
   const productos = contenedor.getAll();
   const random = Math.floor(Math.random() * productos.length);
