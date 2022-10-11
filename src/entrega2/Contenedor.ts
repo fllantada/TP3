@@ -11,11 +11,14 @@ export class Contenedor {
   private firstCall = true;
 
   constructor(private fileName: string) {
+    console.log("Llamo al constructor del Contenedor");
     this.path = `${__dirname}/${this.fileName}`;
   }
 
   async save(Object: Object): Promise<number> {
+    console.log("Inicio save");
     if (this.firstCall) {
+      console.log("Es first call");
       await this.findOrCreate();
       this.firstCall = false;
     }
@@ -27,13 +30,14 @@ export class Contenedor {
   }
 
   async findOrCreate() {
+    console.log("inicio find or create");
     try {
       await fs.access(this.path);
       const fileData = await fs.readFile(this.path, "utf-8");
       this.data = JSON.parse(fileData);
       console.log("la data leida es:", this.data);
     } catch (err) {
-      console.log(err);
+      console.log("El archivo no existía se crea uno nuevo");
     }
   }
 
