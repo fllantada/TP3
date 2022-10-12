@@ -51,5 +51,5 @@ app.get("/productoRandom", (req: Request, res: Response) => {
   res.json(productos[random]);
 });
 app.get("/", (req: Request, res: Response) => {
-  res.send("servidor operando en puerto 8080");
+  res.send("TP3 Francisco LLantada:  servidor operando en puerto 8080");
 });
