@@ -34,7 +34,10 @@ const PORT = process.env.PORT || 8080;
 app.use(express.json());
 
 app.listen(PORT, () => {
-  console.log("Servidor funcionando en puerto:  ", PORT);
+  console.log(
+    "Servidor Francisco Javier Llantada funcionando en puerto:  ",
+    PORT
+  );
 });
 
 app.get("/productos", (req: Request, res: Response) => {
