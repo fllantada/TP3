@@ -29,12 +29,12 @@ async function addMockData(
 }
 
 const app: Express = express();
-const PORT = process.env.PORT||8080;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.json());
 
 app.listen(PORT, () => {
-  console.log("Servidor funcionando Listen in port ", PORT);
+  console.log("Servidor funcionando en puerto:  ", PORT);
 });
 
 app.get("/productos", (req: Request, res: Response) => {
@@ -42,13 +42,12 @@ app.get("/productos", (req: Request, res: Response) => {
   res.json(productos);
 });
 
-app.get("/", (req: Request, res: Response) => {
-  console.log("SOlicitud a /");
-  res.send("servidor operando en puerto 8080");
-});
-
 app.get("/productoRandom", (req: Request, res: Response) => {
   const productos = contenedor.getAll();
   const random = Math.floor(Math.random() * productos.length);
   res.json(productos[random]);
+});
+
+app.get("/", (req: Request, res: Response) => {
+  res.send("servidor operando en puerto 8080");
 });
