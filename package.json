@@ -6,7 +6,7 @@
   "scripts": {
     "build": "rimraf ./dist && tsc",
     "start": "npm run build && node dist/index.js",
-    "prod":"node ./dist/index.js",
+    "prod": "node ./dist/index.js",
     "dev": "nodemon"
   },
   "keywords": [],
@@ -28,6 +28,7 @@
     "express": "^4.18.2",
     "nodemon": "^2.0.20",
     "ts-jest": "^29.0.1",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "uuid": "^9.0.0"
   }
 }
