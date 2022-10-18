@@ -1,14 +1,14 @@
 import { Router } from "express";
-import productApi from "../controller/products";
-import { Request, Response } from "express";
-import path from "path";
+import productApi from "../controller/ProductApiClass";
 
 const productos = Router();
-const filePath = path.resolve(__dirname, "../../archivo.txt");
 
-const getAllTest = (req: Request, res: Response) => {
-  productApi.getAll(req, res);
-};
-productos.get("/", getAllTest);
+productos.get("/", productApi.getAll.bind(productApi));
+productos.get("/:id", productApi.getById.bind(productApi));
+productos.post("/", productApi.create.bind(productApi));
+productos.put("/:id", productApi.edit.bind(productApi));
+productos.delete("/:id", productApi.delete.bind(productApi));
 
 export default productos;
+
+//get /api/productos
