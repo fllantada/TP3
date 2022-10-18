@@ -9,12 +9,6 @@ app.use(express.json());
 
 const publicPath = path.resolve(__dirname, "../public");
 
-app.use("/", (req, res, next) => {
-  const publicPath = path.resolve(__dirname, "../public");
-  console.log("publicPath", publicPath);
-  next();
-});
-
 app.use(express.static(publicPath));
 
 app.use("/api", mainRouter);

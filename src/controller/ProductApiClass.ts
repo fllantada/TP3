@@ -1,4 +1,7 @@
 import { Request, Response } from "express";
+
+//Value Object
+
 type Product = {
   id?: string;
   title: string;
@@ -6,12 +9,16 @@ type Product = {
   thumbnail: string;
 };
 
+//test product for check
+
 const testProduct: Product = {
   id: "1",
   title: "test",
   price: 100,
   thumbnail: "test",
 };
+
+//App
 
 class ProductApiClass {
   private products: Product[] = [testProduct];
