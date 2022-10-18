@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf ./dist && tsc",
-    "start": "npm run build && copyfiles -u 1 src/public/**.html dist/public && node dist/index.js",
+    "start": "npm run build && copyfiles -u 1 src/public/**.html dist/ && node dist/index.js",
     "prod": "node ./dist/index.js",
     "dev": "nodemon"
   },
